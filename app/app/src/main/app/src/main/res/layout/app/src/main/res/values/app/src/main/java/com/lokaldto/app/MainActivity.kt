@@ -12,8 +12,7 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
 
         val text = TextView(this)
-
-        text.text = "LoKalDiTo TEST 2"
+        text.text = "LoKalDiTo TEST 3"
         text.textSize = 28f
         text.setTextColor(Color.WHITE)
         text.setBackgroundColor(Color.rgb(8, 107, 22))

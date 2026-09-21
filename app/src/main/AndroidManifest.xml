@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:label="LoKalDiTo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LoKalDiTo">
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
         <activity
             android:name=".MainActivity"
@@ -16,8 +16,7 @@
 
                 <action android:name="android.intent.action.MAIN" />
 
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
 
             </intent-filter>
 

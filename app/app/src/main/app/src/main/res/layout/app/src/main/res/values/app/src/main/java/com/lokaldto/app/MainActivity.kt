@@ -11,14 +11,14 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val screen = TextView(this)
+        val text = TextView(this)
 
-        screen.text = "LoKalDiTo is working!"
-        screen.textSize = 28f
-        screen.setTextColor(Color.WHITE)
-        screen.setBackgroundColor(Color.rgb(8, 107, 22))
-        screen.gravity = Gravity.CENTER
+        text.text = "LoKalDiTo TEST 2"
+        text.textSize = 28f
+        text.setTextColor(Color.WHITE)
+        text.setBackgroundColor(Color.rgb(8, 107, 22))
+        text.gravity = Gravity.CENTER
 
-        setContentView(screen)
+        setContentView(text)
     }
 }

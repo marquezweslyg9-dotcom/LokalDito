@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>LoKalDiTo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- HOME SCREEN -->
+
+        <section id="homeScreen" class="screen active">
+
+            <header class="top-header">
+
+                <div class="header-icons">
+
+                    <button class="icon-button" onclick="openSearch()">
+                        🔍
+                    </button>
+
+                    <button class="icon-button">
+                        🔔
+                    </button>
+
+                    <button class="icon-button" onclick="openMenu()">
+                        ☰
+                    </button>
+
+                </div>
+
+                <div class="brand-area">
+
+                    <img
+                        src="lokaldoto-cover.jpg"
+                        class="cover-image"
+                        alt="LoKalDiTo"
+                    >
+
+                    <h1>LoKalDiTo</h1>
+
+                </div>
+
+            </header>
+
+
+            <main class="home-content">
+
+                <p class="intro-text">
+                    LoKalDiTo connects you to nearby fictional
+                    Philippine businesses, making local shopping
+                    easy and fun while building community ties.
+                </p>
+
+
+                <button
+                    class="primary-button"
+                    onclick="openSearch()"
+                >
+                    Search local businesses
+                </button>
+
+
+                <div
+                    class="dashboard-card"
+                    onclick="openSellerDashboard()"
+                >
+
+                    <div class="dashboard-icon">
+                        🏪
+                    </div>
+
+                    <div class="dashboard-text">
+
+                        <h2>Seller Dashboard</h2>
+
+                        <p>
+                            Edit your fictional store listing
+                            and keep it current.
+                        </p>
+
+                    </div>
+
+                    <div class="dashboard-arrow">
+                        ☰
+                    </div>
+
+                </div>
+
+            </main>
+
+        </section>
+
+
+        <!-- SEARCH SCREEN -->
+
+        <section id="searchScreen" class="screen">
+
+            <div class="page-header">
+
+                <button onclick="goHome()">←</button>
+
+                <h2>Search</h2>
+
+            </div>
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search local businesses..."
+                    oninput="searchBusinesses()"
+                >
+
+            </div>
+
+            <div id="searchResults"></div>
+
+        </section>
+
+
+        <!-- STORE SCREEN -->
+
+        <section id="storeScreen" class="screen">
+
+            <div class="page-header">
+
+                <button onclick="goBack()">←</button>
+
+                <h2>Store</h2>
+
+            </div>
+
+            <div id="storeDetails"></div>
+
+        </section>
+
+
+        <!-- SAVED SCREEN -->
+
+        <section id="savedScreen" class="screen">
+
+            <div class="page-header">
+
+                <button onclick="goHome()">←</button>
+
+                <h2>Saved Stores</h2>
+
+            </div>
+
+            <div id="savedStores"></div>
+
+        </section>
+
+
+        <!-- PROFILE SCREEN -->
+
+        <section id="profileScreen" class="screen">
+
+            <div class="page-header">
+
+                <button onclick="goHome()">←</button>
+
+                <h2>Profile</h2>
+
+            </div>
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">
+                    👤
+                </div>
+
+                <h2>LoKalDiTo User</h2>
+
+                <p>Local marketplace member</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SELLER DASHBOARD -->
+
+        <section id="sellerScreen" class="screen">
+
+            <div class="page-header">
+
+                <button onclick="goHome()">←</button>
+
+                <h2>Seller Dashboard</h2>
+
+            </div>
+
+            <div class="seller-content">
+
+                <h3>Your Store</h3>
+
+                <input
+                    id="sellerName"
+                    placeholder="Store name"
+                >
+
+                <textarea
+                    id="sellerDescription"
+                    placeholder="Store description"
+                ></textarea>
+
+                <button
+                    class="primary-button"
+                    onclick="saveSeller()"
+                >
+                    Save Store
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTTOM NAVIGATION -->
+
+        <nav class="bottom-nav">
+
+            <button onclick="goHome()">
+                <span>⌂</span>
+                <small>Home</small>
+            </button>
+
+            <button onclick="openSearch()">
+                <span>⌕</span>
+                <small>Search</small>
+            </button>
+
+            <button onclick="openSaved()">
+                <span>♡</span>
+                <small>Saved</small>
+            </button>
+
+            <button onclick="openProfile()">
+                <span>◉</span>
+                <small>Profile</small>
+            </button>
+
+        </nav>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+                  </html>

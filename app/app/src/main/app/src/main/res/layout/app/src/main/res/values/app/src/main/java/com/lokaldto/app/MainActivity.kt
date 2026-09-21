@@ -1,10 +1,12 @@
 package com.lokaldto.app
 
 import android.os.Bundle
-import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
+import androidx.webkit.WebViewAssetLoader
+import androidx.webkit.WebViewClient
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,16 +21,36 @@ class MainActivity : AppCompatActivity() {
 
         webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
-        webView.settings.allowFileAccess = true
-        webView.settings.allowContentAccess = true
+        webView.settings.allowFileAccess = false
+        webView.settings.allowContentAccess = false
 
-        webView.webViewClient = WebViewClient()
-        webView.webChromeClient = WebChromeClient()
+        val assetLoader = WebViewAssetLoader.Builder()
+            .addPathHandler(
+                "/assets/",
+                WebViewAssetLoader.AssetsPathHandler(this)
+            )
+            .build()
 
-        webView.loadUrl("file:///android_asset/index.html")
+        webView.webViewClient = object : WebViewClient() {
+
+            override fun shouldInterceptRequest(
+                view: WebView,
+                request: WebResourceRequest
+            ): WebResourceResponse? {
+
+                return assetLoader.shouldInterceptRequest(
+                    request.url
+                )
+            }
+        }
+
+        webView.loadUrl(
+            "https://appassets.androidplatform.net/assets/index.html"
+        )
     }
 
     override fun onBackPressed() {
+
         if (webView.canGoBack()) {
             webView.goBack()
         } else {

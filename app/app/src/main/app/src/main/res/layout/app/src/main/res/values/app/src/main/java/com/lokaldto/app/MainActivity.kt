@@ -1,60 +1,24 @@
 package com.lokaldto.app
 
+import android.app.Activity
 import android.os.Bundle
-import android.webkit.WebResourceRequest
-import android.webkit.WebResourceResponse
-import android.webkit.WebView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.webkit.WebViewAssetLoader
-import androidx.webkit.WebViewClient
+import android.graphics.Color
+import android.view.Gravity
+import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var webView: WebView
+class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        val screen = TextView(this)
 
-        webView = findViewById(R.id.webView)
+        screen.text = "LoKalDiTo is working!"
+        screen.textSize = 28f
+        screen.setTextColor(Color.WHITE)
+        screen.setBackgroundColor(Color.rgb(8, 107, 22))
+        screen.gravity = Gravity.CENTER
 
-        webView.settings.javaScriptEnabled = true
-        webView.settings.domStorageEnabled = true
-        webView.settings.allowFileAccess = false
-        webView.settings.allowContentAccess = false
-
-        val assetLoader = WebViewAssetLoader.Builder()
-            .addPathHandler(
-                "/assets/",
-                WebViewAssetLoader.AssetsPathHandler(this)
-            )
-            .build()
-
-        webView.webViewClient = object : WebViewClient() {
-
-            override fun shouldInterceptRequest(
-                view: WebView,
-                request: WebResourceRequest
-            ): WebResourceResponse? {
-
-                return assetLoader.shouldInterceptRequest(
-                    request.url
-                )
-            }
-        }
-
-        webView.loadUrl(
-            "https://appassets.androidplatform.net/assets/index.html"
-        )
-    }
-
-    override fun onBackPressed() {
-
-        if (webView.canGoBack()) {
-            webView.goBack()
-        } else {
-            super.onBackPressed()
-        }
+        setContentView(screen)
     }
 }

@@ -4,7 +4,7 @@
 
     <application
         android:theme="@android:style/Theme.Material.Light.NoActionBar"
-        android:label="LoKalDiTo TEST 2"
+        android:label="LoKalDiTo TEST 3"
         android:allowBackup="false"
         android:supportsRtl="true">
 
@@ -13,11 +13,8 @@
             android:exported="true">
 
             <intent-filter>
-
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
 
         </activity>

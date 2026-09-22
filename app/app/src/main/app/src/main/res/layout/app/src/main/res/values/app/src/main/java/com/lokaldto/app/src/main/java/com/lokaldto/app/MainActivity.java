@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
 
         TextView text = new TextView(this);
 
-        text.setText("LoKalDiTo TEST 4");
+        text.setText("LoKalDiTo");
         text.setTextSize(28);
         text.setTextColor(Color.WHITE);
         text.setBackgroundColor(Color.rgb(8, 107, 22));

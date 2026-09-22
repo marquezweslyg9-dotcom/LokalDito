@@ -1,22 +1,4 @@
 plugins {
-    id("com.android.application")
-}
-
-android {
-    namespace = "com.lokaldto.app"
-    compileSdk = 35
-
-    defaultConfig {
-        applicationId = "com.lokaldto.app"
-        minSdk = 23
-        targetSdk = 35
-        versionCode = 5
-        versionName = "1.4"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-        }
-    }
+    id("com.android.application") version "8.7.3" apply false
+    id("org.jetbrains.kotlin.android") version "2.0.21" apply false
 }
